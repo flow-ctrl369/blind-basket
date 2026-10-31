@@ -1,0 +1,4 @@
+import { Phone, ArrowUpRight } from 'lucide-react'
+import { PageIntro, SiteShell } from '@/components/site'
+import { business } from '@/lib/content'
+export default function ContactPage() { return <SiteShell><PageIntro eyebrow="CONTACT" title="Say hello." copy="For the quickest answer, give the café a call. We’re keeping contact simple while the new site settles in." /><div className="content-wrap"><div className="info-grid"><div><Phone color="var(--persimmon)" /><h2>Call the café</h2><p>Ask about current opening hours, the menu, or anything else before your visit.</p><a className="button button-primary" href={`tel:${business.phone.replaceAll(' ', '')}`}>Call {business.phone} <ArrowUpRight size={17} /></a></div><div><h2>Visit us</h2><p>{business.address}</p><a className="text-link" href={business.maps} target="_blank" rel="noreferrer">Get directions <ArrowUpRight size={17} /></a></div></div></div></SiteShell> }
