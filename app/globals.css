@@ -36,4 +36,18 @@ footer { background:var(--oat); padding:70px clamp(20px,5vw,72px) 28px; display:
 .carousel-caption .eyebrow { margin:0; }
 .carousel-caption > p:last-child { margin:0; color:#62645d; font-size:14px; }
 @keyframes carousel-in { from { opacity:0; transform:scale(1.025); } to { opacity:1; transform:scale(1); } }
+.info-section-copy { max-width:560px; }
+.statement, .menu-tease { display:grid; grid-template-columns:minmax(0, 1fr) minmax(280px, .72fr); gap:clamp(32px, 7vw, 110px); align-items:center; }
+.menu-tease { align-items:start; }
+.menu-tease .info-carousel { grid-column:1 / -1; max-width:520px; }
+.info-carousel { position:relative; width:100%; overflow:hidden; background:var(--oat); }
+.info-carousel img { width:100%; aspect-ratio:4 / 3; display:block; object-fit:cover; animation:carousel-in .45s ease both; }
+.info-carousel-controls { position:absolute; inset:auto 12px 12px; display:flex; align-items:center; justify-content:space-between; color:var(--porcelain); font-size:10px; letter-spacing:.12em; text-shadow:0 1px 7px rgba(0,0,0,.4); }
+.info-carousel-controls > div { display:flex; gap:6px; }
+.info-carousel-controls button { width:32px; height:32px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.7); background:rgba(37,39,34,.45); color:var(--porcelain); cursor:pointer; transition:background .2s ease, color .2s ease; }
+.info-carousel-controls button:hover { background:var(--porcelain); color:var(--ink); }
+.visit-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px, 7vw, 110px); align-items:center; }
+.visit-grid .info-carousel { grid-column:1 / -1; max-width:520px; }
+@media (max-width:800px) { .statement, .menu-tease, .visit-grid { display:block; }.statement .info-carousel, .menu-tease .info-carousel, .visit-grid .info-carousel { margin-top:32px; } .menu-tease > div + div { margin-top:24px; } }
+@media (prefers-reduced-motion: reduce) { .info-carousel img { animation:none; } }
 @media (max-width:800px) { .carousel-caption { display:block; }.carousel-caption > p:last-child { margin-top:8px; } .carousel-controls { right:14px; bottom:14px; } .carousel-frame { height:78vw; min-height:300px; } }
